@@ -1,17 +1,18 @@
 import React, { use } from "react";
-import { AuthContext } from "./AuthProvider";
 import { Navigate, useLocation } from "react-router";
-import Loading from "./Loading";
+import Loading from "../Pages/Loading";
+import { AuthContext } from "./AuthContext";
 
-const PriviteRouts = ({ children }) => {
+export const PriviteRouts = ({ children }) => {
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
 
-  const { user, loading } = use(AuthContext);
+  const {user, loading } = use(AuthContext);
   if (loading) {
-    return <Loading></Loading>;
+    return <Loading></Loading>
+
   }
-  if (user && user.email) {
+  if (user) {
     return children;
   } 
   else {

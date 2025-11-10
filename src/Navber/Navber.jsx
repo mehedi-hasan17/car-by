@@ -12,6 +12,8 @@ const Navber = () => {
       <li>
        <NavLink  to="/"> <IoIosHome /> Home</NavLink>
       </li> 
+      <li>
+       <NavLink  to="/browse-car">Browser Cars</NavLink></li>
       {user && (
         <>
           {" "}

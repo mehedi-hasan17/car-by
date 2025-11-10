@@ -9,6 +9,7 @@ import MyListings from "../Pages/MyListings.jsx"
 import Home from "../Pages/Home.jsx";
 import DetelsPage from "../Pages/DetelsPage.jsx";
 import ErrorPage from "../Componets/ErrorPage.jsx";
+import { PriviteRouts } from '../Context/PrivateRouter.jsx'
 
 export const router = createBrowserRouter([
   {
@@ -31,23 +32,26 @@ export const router = createBrowserRouter([
       },
       {
         path:'add-car',
-        Component: AddCar,
+
+        element:<PriviteRouts><AddCar></AddCar></PriviteRouts> 
       },
       {
         path:'/browse-car',
-        Component: BrowerCars
+        element: <BrowerCars></BrowerCars>,
+        loader: () => fetch('http://localhost:3000/cars')
+        
       },
       {
         path:'/my-bookings',
-        Component: MyBookings
+        element: <PriviteRouts><MyBookings></MyBookings></PriviteRouts>
       },
       {
         path:'/my-listings',
-        Component: MyListings
+        element: <PriviteRouts><MyListings></MyListings></PriviteRouts>
       },
       {
         path:'/detels-page/:id',
-        Component: DetelsPage
+        element: <PriviteRouts><DetelsPage></DetelsPage></PriviteRouts>
       },
     ]
   },

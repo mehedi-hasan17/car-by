@@ -5,7 +5,7 @@ const LetestCar = ({ car }) => {
 
   return (
       <div
-        className="card bg-base-100 shadow-xl p-4 border rounded-lg"
+        className="card bg-base-100 shadow-xl  p-4 border rounded-lg"
       >
         <img
           src={car.image}

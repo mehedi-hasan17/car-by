@@ -10,6 +10,7 @@ import Home from "../Pages/Home.jsx";
 import DetelsPage from "../Pages/DetelsPage.jsx";
 import ErrorPage from "../Componets/ErrorPage.jsx";
 import { PriviteRouts } from '../Context/PrivateRouter.jsx'
+import UpdateCar from "../Pages/UpdateCar.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
       {
         path:'/detels-page/:id',
         element: <PriviteRouts><DetelsPage></DetelsPage></PriviteRouts>
+      },
+      {
+        path:'//update-car/:id',
+        element: <PriviteRouts><UpdateCar></UpdateCar></PriviteRouts>
       },
     ]
   },

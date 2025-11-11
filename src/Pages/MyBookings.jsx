@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const [loadingCancel, setLoadingCancel] = useState(null); // কোন বুকিং Cancel হচ্ছে তা ট্র্যাক করতে
+  // const [loadingCancel, setLoadingCancel] = useState(null); // কোন বুকিং Cancel হচ্ছে তা ট্র্যাক করতে
 
   useEffect(() => {
     if (user?.email) {
@@ -18,27 +18,27 @@ const MyBookings = () => {
   }, [user]);
 
   // Cancel booking
-  const handleCancel = async (id) => {
-    const confirmCancel = window.confirm("Do you want to cancel this booking?");
-    if (!confirmCancel) return;
+  // const handleCancel = async (id) => {
+  //   const confirmCancel = window.confirm("Do you want to cancel this booking?");
+  //   if (!confirmCancel) return;
 
-    try {
-      setLoadingCancel(id); // Loading state শুরু
-      const res = await fetch(`http://localhost:3000/bookings/${id}`, { method: "DELETE" });
-      const data = await res.json();
+  //   try {
+  //     setLoadingCancel(id); // Loading state শুরু
+  //     const res = await fetch(`http://localhost:3000/bookings/${id}`, { method: "DELETE" });
+  //     const data = await res.json();
 
-      if (data.deletedCount > 0) {
-        setBookings((prev) => prev.filter((b) => b._id !== id));
-        toast.success("Booking canceled successfully!");
-      } else {
-        toast.error("Failed to cancel booking!");
-      }
-    } catch (err) {
-      toast.error("Server error: " + err.message);
-    } finally {
-      setLoadingCancel(null); // Loading state শেষ
-    }
-  };
+  //     if (data.deletedCount > 0) {
+  //       setBookings((prev) => prev.filter((b) => b._id !== id));
+  //       toast.success("Booking canceled successfully!");
+  //     } else {
+  //       toast.error("Failed to cancel booking!");
+  //     }
+  //   } catch (err) {
+  //     toast.error("Server error: " + err.message);
+  //   } finally {
+  //     setLoadingCancel(null); // Loading state শেষ
+  //   }
+  // };
 
   return (
     <div className="p-6">
@@ -56,7 +56,6 @@ const MyBookings = () => {
               <th className="border px-4 py-2">Rent Price</th>
               <th className="border px-4 py-2">Booked Date</th>
               <th className="border px-4 py-2">Status</th>
-              <th className="border px-4 py-2">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -65,13 +64,13 @@ const MyBookings = () => {
                 <td className="border px-4 py-2">{user.displayName}</td>
                 <td className="border px-4 py-2">{user.email}</td>
                 <td className="border px-4 py-2">{b.carName}</td>
-                <td className="border px-4 py-2">{b.rentPrice} ৳</td>
+                <td className="border px-4 py-2">$ {b.rentPrice} </td>
                 <td className="border px-4 py-2">
-                  {new Date(b.date).toLocaleDateString()}{" "}
+                  {new Date(b.date).toLocaleDateString()}{" "} 
                   {new Date(b.date).toLocaleTimeString()}
                 </td>
                 <td className="border px-4 py-2">{b.status}</td>
-                <td className="border px-4 py-2 text-center">
+                {/* <td className="border px-4 py-2 text-center">
                   <button
                     onClick={() => handleCancel(b._id)}
                     disabled={loadingCancel === b._id}
@@ -81,7 +80,7 @@ const MyBookings = () => {
                   >
                     {loadingCancel === b._id ? "Cancelling..." : "Cancel"}
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))}
           </tbody>

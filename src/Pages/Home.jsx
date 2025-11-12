@@ -32,7 +32,7 @@ const Home = () => {
       desc: "Book instantly and travel anywhere, anytime!",
     },
     {
-      img: "https://i.postimg.cc/wjQf2hmg/TOP-10-EXPENSIVE-CARS-IN-INDIA-2024.png",
+      img: "https://i.postimg.cc/mgdpzJ6C/pexels-pixabay-35967.jpg",
       title: "Trusted Car Rentals",
       desc: "Thousands of happy customers every month!",
     },

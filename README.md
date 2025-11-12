@@ -1,7 +1,7 @@
 # 🚗 Car Booking Platform
 
-### 🔗 Live Site: [https://mycarbooking.netlify.app](https://mycarbooking.netlify.app)
-### 🔗 Server API: [https://car-booking-server.vercel.app](https://car-booking-server.vercel.app)
+### 🔗 Live Site: [https://mycarbooking.netlify.app]
+### 🔗 Server API: [https://car-project-server-site-adzd3rdw0.vercel.app/]
 
 ---
 

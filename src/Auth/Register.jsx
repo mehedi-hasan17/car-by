@@ -5,9 +5,12 @@ import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
 
 const Register = () => {
-  const { createUser, signInWithGoogle } = use(AuthContext);
+  const { createUser, signInWithGoogle, user, updateUserProfile } =
+    use(AuthContext);
   const navigate = useNavigate();
   const [nameError, setNameError] = useState("");
+  console.log(user);
+
   const heandleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,6 +18,7 @@ const Register = () => {
     const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     console.log(name, photoURL, email, password);
 
     if (name.length < 5) {
@@ -37,6 +41,7 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
+        updateUserProfile(name, photoURL);
         form.reset();
         navigate("/");
         console.log(result.user);

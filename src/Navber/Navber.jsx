@@ -6,7 +6,7 @@ import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { IoIosHome, IoMdAddCircle } from "react-icons/io";
 import { FaBook, FaCar, FaListAlt } from "react-icons/fa";
 const Navber = () => {
-  const { user , signOutUser} = use(AuthContext);
+  const { user , signOutUser,updateUserProfile } = use(AuthContext);
   const links = (
     <>
       <li>
@@ -81,7 +81,7 @@ const Navber = () => {
                 <img
                   alt="Tailwind CSS Navbar component"
                   referrerPolicy="no-referrer"
-                  src={user.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+                  src={user.photoURL || updateUserProfile.photoURL}
                 />
               </div>
             </div>
@@ -90,8 +90,8 @@ const Navber = () => {
               className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
               <div className=" pb-3 border-b border-b-gray-200">
-                <li className="text-sm font-bold">{user.displayName}</li>
-                <li className="text-xs">{user.email}</li>
+                <li className="text-sm font-bold">{user.displayName || updateUserProfile.displayName}</li>
+                <li className="text-xs">{user.email || updateUserProfile.email}</li>
               </div>
                <li>
                 <button

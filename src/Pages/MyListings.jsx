@@ -2,13 +2,13 @@ import React, { useEffect, useState,use } from "react";
 
 import { AuthContext } from "../Context/AuthContext";
 import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const MyListings = () => {
   const { user } = use(AuthContext);
   const [cars, setCars] = useState([]);
   const navigate = useNavigate();
 
-  // ✅ ইউজারের গাড়িগুলো লোড করা
   useEffect(() => {
     if (user?.email) {
       fetch(`http://localhost:3000/my-listings/${user.email}`)
@@ -18,17 +18,23 @@ const MyListings = () => {
     }
   }, [user]);
 
-  // ✅ গাড়ি ডিলিট করা
-  const handleDelete = (id) => {
-    if (confirm("Are you sure you want to delete this car?")) {
-      fetch(`http://localhost:3000/cars/${id}`, { method: "DELETE" })
-        .then((res) => res.json())
-        .then(() => setCars(cars.filter((car) => car._id !== id)))
-        .catch((err) => console.error(err));
-    }
-  };
+ const handleDelete = (id) => {
+  
+  fetch(`http://localhost:3000/cars/${id}`, { method: "DELETE" })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.deletedCount > 0) {
+        setCars((prevCars) => prevCars.filter((car) => car._id !== id));
+        toast.success("Car deleted successfully!");
+      } else {
+        toast.error("Failed to delete car!");
+      }
+    })
+    .catch((err) => {
+      toast.error("Server error: " + err.message);
+    });
+};
 
-  // ✅ আপডেট বাটনে ক্লিক করলে UpdateCar পেজে যাবে
   const handleUpdate = (id) => {
     navigate(`/update-car/${id}`);
   };

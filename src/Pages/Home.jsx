@@ -94,7 +94,7 @@ const Home = () => {
           </svg>
           <input name="search" type="search"  placeholder="Search" />
         </label>
-        <button className="btn ">Search</button>
+        <button className="btn text-2xl p-5 btn-xs text-left bg-linear-to-r from-pink-500 to-red-500 text-white ml-2">Search</button>
         </form>
       </section>
       {/* 🔹 Latest Cars */}

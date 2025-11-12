@@ -85,7 +85,7 @@ const DetelsPage = () => {
           <p>📧 Email: {user.email}</p>
         </div>
 
-        <button onClick={handleBooking} className="btn btn-primary mt-6 w-full">Book Now</button>
+        <Link to='/my-bookings'><button onClick={handleBooking} className="btn btn-primary mt-6 w-full">Book Now</button></Link>
       </div>
     </div>
   );

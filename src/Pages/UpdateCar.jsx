@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import { toast } from "react-toastify";
 
 
 const UpdateCar = () => {
@@ -32,7 +33,7 @@ const UpdateCar = () => {
     })
       .then((res) => res.json())
       .then(() => {
-        alert("Car updated successfully!");
+        toast.success("Car updated successfully!");
         navigate("/my-listings"); // ✅ আপডেট শেষে ফিরে যাবে
       })
       .catch((err) => console.error("Update error:", err));

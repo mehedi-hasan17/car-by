@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import img from '../Navber/car-logo.jpg'
 import { IoLogIn, IoLogOut } from "react-icons/io5";
-import { FaUser } from "react-icons/fa";
-import { IoIosHome } from "react-icons/io";
+import { IoIosHome, IoMdAddCircle } from "react-icons/io";
+import { FaBook, FaCar, FaListAlt } from "react-icons/fa";
 const Navber = () => {
   const { user , signOutUser} = use(AuthContext);
   const links = (
@@ -13,18 +13,18 @@ const Navber = () => {
        <NavLink  to="/"> <IoIosHome /> Home</NavLink>
       </li> 
       <li>
-       <NavLink  to="/browse-car">Browser Cars</NavLink></li>
+       <NavLink  to="/browse-car"> <FaCar/>Browser Cars</NavLink></li>
       {user && (
         <>
           {" "}
           <li>
-            <NavLink to="/add-car">Add Car</NavLink>
+            <NavLink to="/add-car">  <IoMdAddCircle />Add Car</NavLink>
           </li>
           <li>
-            <NavLink to="/my-listings">My Listings</NavLink>
+            <NavLink to="/my-listings"><FaListAlt />My Listings</NavLink>
           </li>
           <li>
-            <NavLink to="/my-bookings">My Bookings</NavLink>
+            <NavLink to="/my-bookings"><FaBook  /> My Bookings</NavLink>
           </li>
         </>
       )}

@@ -40,7 +40,7 @@ const DetelsPage = () => {
       status: "Confirmed",
     };
 
-    // console.log(bookingData)
+    console.log(bookingData)
     fetch(`http://localhost:3000/bookings/${car._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },

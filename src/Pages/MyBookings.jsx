@@ -42,7 +42,7 @@ const MyBookings = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold text-center mb-6">My Bookings</h1>
+      <h1 className="text-2xl font-bold text-center mb-6 ">My Bookings</h1>
 
       {bookings.length === 0 ? (
         <p className="text-center text-gray-500">No bookings yet.</p>

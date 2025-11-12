@@ -15,7 +15,7 @@ const LetestCar = ({ car }) => {
 
       <img
         src={car.image}
-        alt={car.name}
+        alt={car.name}  
         className="w-full h-40 object-cover rounded"
       />
 

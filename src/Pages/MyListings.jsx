@@ -11,7 +11,7 @@ const MyListings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/my-listings/${user.email}`)
+      fetch(`https://car-project-server-site.vercel.app/my-listings/${user.email}`)
         .then((res) => res.json())
         .then((data) => setCars(data))
         .catch((err) => console.error(err));
@@ -20,7 +20,7 @@ const MyListings = () => {
 
  const handleDelete = (id) => {
   
-  fetch(`http://localhost:3000/cars/${id}`, { method: "DELETE" })
+  fetch(`https://car-project-server-site.vercel.app/cars/${id}`, { method: "DELETE" })
     .then((res) => res.json())
     .then((data) => {
       if (data.deletedCount > 0) {

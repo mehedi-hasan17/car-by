@@ -10,7 +10,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/my-bookings/${user.email}`)
+      fetch(`https://car-project-server-site.vercel.app/my-bookings/${user.email}`)
         .then((res) => res.json())
         .then((data) => setBookings(data))
         .catch((err) => toast.error("Failed to fetch bookings: " + err.message));
@@ -24,7 +24,7 @@ const MyBookings = () => {
 
   //   try {
   //     setLoadingCancel(id); // Loading state শুরু
-  //     const res = await fetch(`http://localhost:3000/bookings/${id}`, { method: "DELETE" });
+  //     const res = await fetch(`https://car-project-server-site.vercel.app/bookings/${id}`, { method: "DELETE" });
   //     const data = await res.json();
 
   //     if (data.deletedCount > 0) {

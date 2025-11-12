@@ -31,7 +31,7 @@ const AddCar = () => {
     };
     console.log(newCar);
 
-    fetch('http://localhost:3000/cars',{
+    fetch('https://car-project-server-site.vercel.app/cars',{
       method: 'POST',
       headers: {
         "content-type": "application/json",

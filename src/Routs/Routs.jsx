@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: ()=>fetch('http://localhost:3000/latest-cars')
+        loader: ()=>fetch('https://car-project-server-site.vercel.app/latest-cars')
       },
       {
         path:'/register',
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
       {
         path:'/browse-car',
         element: <BrowerCars></BrowerCars>,
-        loader: () => fetch('http://localhost:3000/cars')
+        loader: () => fetch('https://car-project-server-site.vercel.app/cars')
         
       },
       {

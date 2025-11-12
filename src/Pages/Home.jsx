@@ -40,7 +40,7 @@ const Home = () => {
   const heandelSearch= (e) =>{
     e.preventDefault();
     const secrchValue = e.target.search.value;
-    fetch(`http://localhost:3000/search?search=${secrchValue}`)
+    fetch(`https://car-project-server-site.vercel.app/search?search=${secrchValue}`)
     .then(res => res.json())
     .then(data =>{
       setSearchCar(data);

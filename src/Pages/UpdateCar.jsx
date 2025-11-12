@@ -10,7 +10,7 @@ const UpdateCar = () => {
 
   // ✅ গাড়ির পুরনো ডেটা লোড করা
   useEffect(() => {
-    fetch(`http://localhost:3000/cars/${id}`)
+    fetch(`https://car-project-server-site.vercel.app/cars/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data))
       .catch((err) => console.error(err));
@@ -26,7 +26,7 @@ const UpdateCar = () => {
       status: e.target.status.value,
     };
 
-    fetch(`http://localhost:3000/cars/${id}`, {
+    fetch(`https://car-project-server-site.vercel.app/cars/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedCar),

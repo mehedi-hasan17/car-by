@@ -9,7 +9,7 @@ const DetelsPage = () => {
 
   // 1️⃣ গাড়ির তথ্য লোড করা
   useEffect(() => {
-    fetch(`http://localhost:3000/cars/${id}`)
+    fetch(`https://car-project-server-site.vercel.app/cars/${id}`)
       .then((res) => res.json())
       .then((data) => setCar(data))
       .catch((err) => console.error(err));
@@ -41,7 +41,7 @@ const DetelsPage = () => {
     };
 
     console.log(bookingData)
-    fetch(`http://localhost:3000/bookings/${car._id}`, {
+    fetch(`https://car-project-server-site.vercel.app/bookings/${car._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(bookingData),

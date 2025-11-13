@@ -1,7 +1,7 @@
 # 🚗 Car Booking Platform
 
 ### 🔗 Live Site: [https://car-project-72ad7.web.app/]
-### 🔗 Server API: [https://car-project-server-site.vercel.app/]
+### 🔗 Server API: [https://car-project-server-site-9fpevmlsf.vercel.app/]
 
 ---
 

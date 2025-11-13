@@ -47,9 +47,9 @@ const MyBookings = () => {
       {bookings.length === 0 ? (
         <p className="text-center text-gray-500">No bookings yet.</p>
       ) : (
-        <table className="table-auto w-full border-collapse border border-gray-300">
+        <table className="table-auto w-full border-collapse border border-gray-400">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-purple-300">
               <th className="border px-4 py-2">Name</th>
               <th className="border px-4 py-2">Email</th>
               <th className="border px-4 py-2">Car Name</th>
@@ -60,7 +60,7 @@ const MyBookings = () => {
           </thead>
           <tbody>
             {bookings.map((b) => (
-              <tr key={b._id} className="hover:bg-gray-50 transition">
+              <tr key={b._id}  className="hover:bg-gray-50 bg-fuchsia-200 transition">
                 <td className="border px-4 py-2">{user.displayName}</td>
                 <td className="border px-4 py-2">{user.email}</td>
                 <td className="border px-4 py-2">{b.carName}</td>

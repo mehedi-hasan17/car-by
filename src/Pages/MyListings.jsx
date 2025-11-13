@@ -48,7 +48,7 @@ const MyListings = () => {
       ) : (
         <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-purple-300">
               <th className="border px-4 py-2">Car Name</th>
               <th className="border px-4 py-2">Category</th>
               <th className="border px-4 py-2">Rent Price</th>
@@ -58,7 +58,7 @@ const MyListings = () => {
           </thead>
           <tbody>
             {cars.map((car) => (
-              <tr key={car._id}>
+              <tr key={car._id}className="hover:bg-gray-50 bg-fuchsia-200 transition" >
                 <td className="border px-4 py-2">{car.name}</td>
                 <td className="border px-4 py-2">{car.category}</td>
                 <td className="border px-4 py-2">${car.rentPrice}</td>

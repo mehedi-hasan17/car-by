@@ -9,7 +9,7 @@ const Root = () => {
       <header>
         <Navber className="sticky top-0 z-50"></Navber>
       </header>
-      <main className="flex-1 overflow-y-auto px-4 py-6 bg-gray-50">
+      <main className="flex-1 overflow-y-auto px-4 py-6 bg-green-100">
         <Outlet></Outlet>
       </main>
       <header>

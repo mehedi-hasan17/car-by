@@ -20,7 +20,7 @@ A modern car rental web application where users can explore available cars, book
 - 🌈 **Responsive UI:** Fully responsive design built with React, Tailwind CSS, and DaisyUI.
 - ⚙️ **Notifications:** All success/error messages shown via `react-toastify` (no browser alerts).
 - ☁️ **Hosting:**  
-  - Client → Netlify  
+  - Client → Firebase  
   - Server → Vercel  
   - Database → MongoDB Atlas  
 
